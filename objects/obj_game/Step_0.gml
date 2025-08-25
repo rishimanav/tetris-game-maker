@@ -1,5 +1,3 @@
-
-
 // Step Event
 fall_timer++;
 

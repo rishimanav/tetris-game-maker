@@ -47,14 +47,36 @@ shape_types = [
 	{
 		type:"tshape",
 		tile_count: 4,
-		shape: [],
+		// Origin is the (x, y) of the tile about which rotation 
+		// & drawing should happen. in case of T-shape, the head
+		// is the origin.
+		origin: [0, 1], 
+		// 0 is the usual orientation of the tetromino, and all
+		// further orientations each differing by 90 degrees each 
+		// should be numbered in anti-clockwise fashion.
+		orientation: 0, 
 		rotate: function(){
 			// method to rotate the shape clockwise
+			self.orientation = (self.orientation + 1) % 4
 			show_debug_message("rotated tshape");
 		},
+		
 		draw: function(){
 			// method to draw the shape
-		}
+			show_debug_message("drew tshape");
+		},
+		
+		fall: function(){
+		},
+		
+		move_left: function(){
+		},
+		
+		move_right: function(){
+		},
+		
+		move_down: function(){
+		},
 		
 	}
 
